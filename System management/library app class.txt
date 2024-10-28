@@ -1,0 +1,60 @@
+import java.util.Scanner;
+
+public class LibraryApp {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Library library   
+ = new Library();
+
+        // Sample items to add to the library
+        library.addItem(new Book("The Lord of the Rings", "J.R.R. Tolkien", 1954));
+        library.addItem(new Magazine("National Geographic", "Various", 2023, new Date()));
+
+        int choice;
+
+        do {
+            System.out.println("Library Menu:");
+            System.out.println("1. Add Item");
+            System.out.println("2. Remove Item");
+            System.out.println("3. Find Item by Title");
+            System.out.println("4. List All Items");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+
+                switch (choice) {
+                    case 1:
+                        // Add item logic (requires user input for item details)
+                        break;
+                    case 2:
+                        // Remove item logic (requires user input for item to remove)
+                        break;
+                    case 3:
+                        System.out.print("Enter title to search: ");
+                        String title = scanner.nextLine();
+                        LibraryItem item = library.findItemByTitle(title);
+                        if (item != null) {
+                            item.displayInfo();
+                        } else {
+                            System.out.println("Item not found.");
+                        }
+                        break;
+                    case 4:
+                        library.listItems();
+                        break;
+                    case 5:
+                        System.out.println("Exiting the library app.");
+                        break;
+                    default:
+                        System.out.println("Invalid choice. Please try again.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please   
+ enter a number.");
+            }
+        } while (choice != 5);
+    }
+}

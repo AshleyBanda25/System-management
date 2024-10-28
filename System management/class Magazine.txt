@@ -1,0 +1,28 @@
+public class Magazine extends LibraryItem {
+
+    private Date issueDate;
+
+    // Constructor
+    public Magazine(String title, String author, int publicationYear, Date issueDate) {
+        super(title, author, publicationYear);
+        this.issueDate = issueDate;
+    }
+
+    // Getters and Setters
+    public Date getIssueDate() {
+        return issueDate;
+    }
+
+    public void setIssueDate(Date issueDate) {
+        this.issueDate = issueDate;   
+
+    }
+
+    // Implement required methods from LibraryItem (if any)
+    // For example, if LibraryItem has a method to display information:
+    @Override
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Issue Date: " + issueDate);
+    }
+}

@@ -1,0 +1,86 @@
+1. Proper Use of Abstraction
+
+Abstract Class:
+
+Java
+abstract class LibraryItem {
+    private String title;
+    private String author;
+    private int publicationYear;
+
+    public LibraryItem(String title, String author, int publicationYear) {
+        this.title = title;
+        this.author = author;
+        this.publicationYear = publicationYear;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public int getPublicationYear() {
+        return publicationYear;
+    }
+
+    public   
+ abstract void displayInfo();
+}
+Use code with caution.
+
+Interface:
+
+Java
+interface Searchable {
+    boolean matches(String query);
+}
+Use code with caution.
+
+2. Encapsulation
+
+The LibraryItem class encapsulates its data members (title, author, publicationYear) and provides access to them through getters. This prevents direct modification of the internal state and ensures data integrity.
+
+3. Polymorphism
+
+The displayInfo() method in the LibraryItem class is abstract, allowing subclasses like Book and Magazine to provide their own implementations. This demonstrates polymorphism, where objects of different types can be treated as objects of a common superclass.
+
+Java
+class Book extends LibraryItem implements Searchable {
+    // ...
+    @Override
+    public void displayInfo() {
+        // Specific book display logic
+    }
+
+    @Override
+    public boolean matches(String query) {
+        // Search logic for books
+    }
+}
+
+class Magazine extends LibraryItem implements Searchable {
+    // ...
+    @Override
+    public void displayInfo() {
+        // Specific magazine display logic
+    }
+
+    @Override
+    public boolean matches(String query) {
+        // Search logic for magazines
+    }
+}
+Use code with caution.
+
+4. Code Organization, Readability, and Comments
+
+Clear Class and Method Naming: Use descriptive names to convey the purpose of classes and methods.
+Consistent Formatting: Adhere to consistent indentation, spacing, and other formatting conventions.
+Meaningful Comments: Explain the purpose of code sections, especially for complex algorithms or non-obvious logic.
+Modular Design: Break down the code into smaller, well-defined modules to improve maintainability.
+Error Handling: Consider adding error handling mechanisms to handle potential exceptions and provide informative error messages.
+By following these principles, you can create well-structured, readable, and maintainable code.
+

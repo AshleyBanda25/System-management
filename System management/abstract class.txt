@@ -1,0 +1,45 @@
+public abstract class LibraryItem {
+    private int id;
+    private String title;
+
+    public LibraryItem(int id, String title) {
+        this.id = id;
+        this.title = title;
+    }
+
+    public   
+ int getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public abstract   
+ String getDetails();
+
+    public abstract boolean isAvailable();
+
+    @Override
+    public String toString() {
+        return "LibraryItem{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                '}';
+    }
+}
+Use code with caution.
+
+Explanation:
+
+Abstract Attributes: id and title are declared as abstract, meaning subclasses must provide concrete implementations for these attributes.
+Abstract Methods:
+getDetails(): This method is abstract, requiring subclasses to provide specific details about the library item, such as author, publication year, or issue date.
+isAvailable(): This method is abstract, requiring subclasses to implement logic to determine the availability status of the item.
+Concrete Method:
+toString(): This method is concrete and provides a basic string representation of the LibraryItem object, including its id and title.
+By using an abstract class, we've established a common foundation for different types of library items, while allowing for flexibility in the specific implementation of getDetails() and isAvailable() methods.
+
+
+

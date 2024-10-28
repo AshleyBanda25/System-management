@@ -1,0 +1,36 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Library {
+
+    private List<LibraryItem> items;
+
+    public Library()   
+ {
+        items = new ArrayList<>();
+    }
+
+    public void addItem(LibraryItem item) {
+        items.add(item);
+    }
+
+    public void   
+ removeItem(LibraryItem item) {
+        items.remove(item);
+    }
+
+    public LibraryItem findItemByTitle(String title) {
+        for (LibraryItem item : items) {
+            if (item.getTitle().equals(title)) {
+                return item;
+            }
+        }
+        return null;
+    }
+
+    public void listItems() {
+        for (LibraryItem item : items) {
+            item.displayInfo();
+        }
+    }
+}

@@ -1,0 +1,53 @@
+public class Book extends LibraryItem implements Borrowable {
+    private String author;
+    private String isbn;
+
+    // Constructor
+    public Book(String title, String author, String isbn) {
+        super(title);
+        this.author = author;
+        this.isbn = isbn;
+    }
+
+    // Getters and Setters
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getIsbn()   
+ {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;   
+
+    }
+
+    // Implementation of Borrowable interface methods
+    @Override
+    public void borrow() {
+        // Implement borrowing logic, e.g., setting a borrowed flag, updating due date
+        System.out.println("Book borrowed: " + getTitle());
+    }
+
+    @Override
+    public void returnItem() {
+        // Implement return logic, e.g., clearing borrowed flag, updating return date
+        System.out.println("Book returned: " + getTitle());
+    }
+
+    // Additional methods as needed
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + getTitle() + '\'' +
+                ", author='" + author + '\'' +
+                ", isbn='" + isbn + '\'' +
+                '}';
+    }
+}
